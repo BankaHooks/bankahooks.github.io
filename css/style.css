@@ -111,20 +111,6 @@ body {
     color: var(--green);
 }
 
-/@media (max-width: 768px) {
-     .main-content {
-         margin-left: 0;
-         margin-bottom: 60px; /* Для нижней панели */
-         padding: 0 1rem;
-         width: 100%;
-     }
-
-     .hero {
-         padding: 2rem 0;
-         min-height: auto;
-     }
- }
-
 .hero-greeting {
     font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
     color: var(--green);
@@ -178,10 +164,11 @@ section {
 }
 
 /* About Section */
-@media (max-width: 768px) {
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 3rem;
+        align-items: start; /* Важно! Выравнивание по верху */
     }
 
     .skills-grid {
@@ -204,10 +191,8 @@ section {
     }
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
+.about-text {
+    text-align: left; /* Выравнивание текста по левому краю */
 }
 
 .skills-list {
@@ -234,6 +219,8 @@ section {
 }
 
 .about-image {
+    max-width: 400px; /* Ограничить максимальную ширину */
+    margin: 0 auto;
     position: relative;
 }
 
@@ -243,6 +230,8 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
 }
 
 .image-wrapper::before {
