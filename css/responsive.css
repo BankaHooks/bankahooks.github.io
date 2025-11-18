@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .contact-details {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .contact-item {
+        padding: 0.6rem;
+    }
+
+    .contact-list {
+        gap: 0.8rem;
+    }
+}

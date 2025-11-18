@@ -1,0 +1,838 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100, 255, 218, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    background-color: var(--navy);
+    color: var(--slate);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-right: 1px solid var(--lightest-navy);
+    z-index: 10;
+}
+
+.logo a {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav-links li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-number {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green);
+    text-decoration: none;
+}
+
+.nav-text {
+    font-size: 0.8rem;
+    color: var(--light-slate);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.nav-text:hover {
+    color: var(--green);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--light-slate);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--green);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 100px;
+    padding: 0 150px;
+    width: calc(100% - 100px);
+    max-width: 1200px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.hero-greeting {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    color: var(--green);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hero-name {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    color: var(--lightest-slate);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.hero-title {
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 600;
+    color: var(--light-slate);
+    margin: 0;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    max-width: 540px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Sections Common Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    margin-bottom: 3rem;
+}
+
+.section-number {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    color: var(--green);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skills-list li {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--light-slate);
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+}
+
+.about-image {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: all 0.3s ease;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--green-tint);
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%) contrast(1);
+    transition: filter 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    font-size: 1.2rem;
+    color: var(--lightest-slate);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-item {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--light-slate);
+    background-color: var(--light-navy);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    color: var(--green);
+    transform: translateY(-2px);
+}
+
+/* Work Section */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.project-reverse .project-image {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+}
+
+.project-reverse .project-content {
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
+    text-align: right;
+}
+
+.project-image {
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: all 0.3s ease;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--green-tint);
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.project-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%) contrast(1);
+    transition: filter 0.3s ease;
+}
+
+.project-image:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+
+.project-content {
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+    z-index: 2;
+}
+
+.project-category {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    background-color: var(--light-navy);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.project-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech li {
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--light-slate);
+    list-style: none;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: var(--light-slate);
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--green);
+}
+
+/* Contact Section */
+.contact-content {
+    text-align: center;
+    max-width: 800px; /* Увеличим для формы */
+    margin: 0 auto;
+}
+
+.contact-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    margin-bottom: 1rem;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Контактные карточки - исправленное выравнивание */
+.contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    background: var(--light-navy);
+    border: 1px solid var(--lightest-navy);
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    height: 100%;
+}
+
+.contact-card:hover {
+    border-color: var(--green);
+    transform: translateY(-5px);
+    background: var(--lightest-navy);
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-card:hover .contact-icon {
+    color: var(--lightest-slate);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.contact-label {
+    display: block;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.contact-value {
+    display: block;
+    color: var(--lightest-slate);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    word-break: break-word;
+    flex-shrink: 0;
+}
+
+/* Форма обратной связи */
+.contact-form {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--light-navy);
+    border-radius: 10px;
+    border: 1px solid var(--lightest-navy);
+}
+
+.contact-form h4 {
+    color: var(--lightest-slate);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: var(--slate);
+}
+
+.input-with-icon textarea + svg {
+    top: 1.5rem;
+    transform: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: var(--navy);
+    border: 1px solid var(--lightest-navy);
+    border-radius: 5px;
+    color: var(--light-slate);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.input-with-icon input:focus,
+.input-with-icon textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+/* Адаптивность для контактов */
+@media (max-width: 768px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem 1rem;
+        min-height: 140px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .input-with-icon input,
+    .input-with-icon textarea {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+    }
+
+    .input-with-icon svg {
+        left: 0.8rem;
+    }
+}
+
+
+/* Форма обратной связи */
+.contact-form {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--light-navy);
+    border-radius: 10px;
+}
+
+.contact-form h4 {
+    color: var(--lightest-slate);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--navy);
+    border: 1px solid var(--lightest-navy);
+    border-radius: 5px;
+    color: var(--light-slate);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+/* Футер */
+.footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--lightest-navy);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 150px;
+}
+
+.copyright {
+    color: var(--slate);
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 2rem;
+        text-align: center;
+    }
+}
+
+/* Стили для SVG иконок в контактах */
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    color: var(--lightest-slate);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Стили для иконок в форме */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.input-with-icon textarea + svg {
+    top: 1.5rem;
+    transform: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+    padding-left: 3rem !important;
+}
+
+/* Иконка в кнопке отправки */
+.cta-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0.5rem; /* Добавляем отступы между кнопками */
+}
+
+.cta-button:hover {
+    background-color: var(--green-tint);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.3);
+}
+
+/* Специфичные стили для кнопки в форме */
+.contact-form .cta-button {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Стили для иконки в кнопке отправки */
+.cta-button svg {
+    transition: transform 0.3s ease;
+    color: currentColor;
+}
+
+.cta-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 100px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10, 25, 47, 0.9));
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--lightest-slate);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--green);
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+}
+
+/* Адаптивность галереи */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-overlay {
+        padding: 1.5rem 1rem 1rem;
+        transform: translateY(0);
+        background: rgba(10, 25, 47, 0.8);
+    }
+
+    .gallery-overlay h3 {
+        font-size: 1.1rem;
+    }
+}
