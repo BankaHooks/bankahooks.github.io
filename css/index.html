@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Даниил Крючков | Java Backend Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Mono:wght@300;400;600&family=Calibre:wght@300;400;600&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="copyright">
+            &copy; 2025 Даниил Крючков. Все права защищены.
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com" aria-label="GitHub">
+                <!-- SVG иконка GitHub -->
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn">
+                <!-- SVG иконка LinkedIn -->
+            </a>
+        </div>
+    </div>
+</footer>
+<body>
+<div class="container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <a href="#home">DK</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-number">01.</a><a href="#about" class="nav-text">Обо мне</a></li>
+            <li><a href="#skills" class="nav-number">02.</a><a href="#skills" class="nav-text">Навыки</a></li>
+            <li><a href="#gallery" class="nav-number">03.</a><a href="#gallery" class="nav-text">Галерея</a></li>
+            <li><a href="#work" class="nav-number">04.</a><a href="#work" class="nav-text">Проекты</a></li>
+            <li><a href="#contact" class="nav-number">05.</a><a href="#contact" class="nav-text">Контакты</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://github.com" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://t.me" aria-label="Telegram">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.14-.288.288-.288.288l.213 3.041c.035.18.011.288-.088.443-.14.14-.288.288-.443.288l-3.134-.213c-.537-.035-.964-.25-1.084-.508l-1.97-9.28c-.145-.658.035-1.084 1.084-1.084l9.28-1.97c.537-.145 1.084.035 1.084 1.084z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <p class="hero-greeting">Привет, меня зовут</p>
+            <h1 class="hero-name">Даниил Крючков.</h1>
+            <h2 class="hero-title">Я создаю backend-системы.</h2>
+            <p class="hero-description">
+                Я Java-разработчик, специализируюсь на создании высоконагруженных
+                микросервисных архитектур и масштабируемых систем. В настоящее время
+                фокусируюсь на построении отказоустойчивых решений с использованием
+                Spring Boot, Kafka и облачных технологий.
+            </p>
+            <button class="cta-button" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">Посмотреть проекты!</button>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title"><span class="section-number">01.</span> Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Привет! Меня зовут Даниил, и я люблю создавать технологии, которые решают
+                        реальные проблемы. Мой интерес к backend-разработке начался с изучения Java
+                        и с тех пор перерос в страсть к созданию сложных распределенных систем.
+                    </p>
+                    <p>
+                        В настоящее время я специализируюсь на построении микросервисных архитектур,
+                        работая с такими технологиями как Spring Boot, Kafka, PostgreSQL и Docker.
+                        Мой опыт включает разработку высоконагруженных систем, где производительность
+                        и надежность являются ключевыми требованиями.
+                    </p>
+                    <p>
+                        Вот несколько технологий, с которыми я работал в последнее время:
+                    </p>
+                    <ul class="skills-list">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>Kafka</li>
+                        <li>PostgreSQL</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="images/avatar.jpg" alt="Даниил Крючков">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <h2 class="section-title"><span class="section-number">02.</span> Навыки & Технологии</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">Hibernate</span>
+                        <span class="skill-item">JPA</span>
+                        <span class="skill-item">Microservices</span>
+                        <span class="skill-item">REST API</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & Messaging</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">Redis</span>
+                        <span class="skill-item">Kafka</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Testing & Security</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">JUnit</span>
+                        <span class="skill-item">Mockito</span>
+                        <span class="skill-item">OAuth2</span>
+                        <span class="skill-item">JWT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <h2 class="section-title"><span class="section-number">03.</span> Избранные проекты</h2>
+            <div class="projects">
+                <div class="project">
+                    <div class="project-content">
+                        <p class="project-category">Featured Project</p>
+                        <h3 class="project-title">Микросервисная платформа</h3>
+                        <div class="project-description">
+                            <p>Высоконагруженная система с event-driven архитектурой, обрабатывающая
+                                тысячи запросов в секунду. Реализована на Spring Boot с использованием
+                                Kafka для асинхронной коммуникации между сервисами.</p>
+                        </div>
+                        <ul class="project-tech">
+                            <li>Spring Boot</li>
+                            <li>Kafka</li>
+                            <li>Kubernetes</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M14.828 12l-5.414-5.414 1.414-1.414L16.657 11H4v2h12.657l-3.829 3.828-1.414-1.414L14.828 12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project project-reverse">
+                    <div class="project-content">
+                        <p class="project-category">Featured Project</p>
+                        <h3 class="project-title">E-commerce API</h3>
+                        <div class="project-description">
+                            <p>Масштабируемый REST API для интернет-магазина с поддержкой тысяч
+                                одновременных пользователей. Включает систему кэширования, аутентификацию
+                                и интеграцию с платежными системами.</p>
+                        </div>
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>Spring Security</li>
+                            <li>Redis</li>
+                            <li>Docker</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M14.828 12l-5.414-5.414 1.414-1.414L16.657 11H4v2h12.657l-3.829 3.828-1.414-1.414L14.828 12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <h2 class="section-title"><span class="section-number">03.</span> Галерея проектов</h2>
+            <div class="gallery-grid">
+                <!-- 1. Микросервисы -->
+                <div class="gallery-item">
+                    <img src="images/microservices.jpg" alt="Микросервисная архитектура" onerror="this.src='images/project1.jpg'">
+                    <div class="gallery-overlay">
+                        <h3>Микросервисы</h3>
+                        <p>Spring Boot + Kafka</p>
+                    </div>
+                </div>
+
+                <!-- 2. REST API -->
+                <div class="gallery-item">
+                    <img src="images/api.jpg" alt="REST API документация" onerror="this.src='images/project2.jpg'">
+                    <div class="gallery-overlay">
+                        <h3>REST API</h3>
+                        <p>Swagger + OpenAPI</p>
+                    </div>
+                </div>
+
+                <!-- 3. Базы данных -->
+                <div class="gallery-item">
+                    <img src="images/database.jpg" alt="База данных PostgreSQL" onerror="this.src='images/project3.jpg'">
+                    <div class="gallery-overlay">
+                        <h3>Базы данных</h3>
+                        <p>PostgreSQL + Redis</p>
+                    </div>
+                </div>
+
+                <!-- 4. Деплоймент -->
+                <div class="gallery-item">
+                    <img src="images/deployment.jpg" alt="Docker контейнеризация" onerror="this.src='images/project1.jpg'">
+                    <div class="gallery-overlay">
+                        <h3>Контейнеризация</h3>
+                        <p>Docker + Kubernetes</p>
+                    </div>
+                </div>
+
+                <!-- 5. Тестирование -->
+                <div class="gallery-item">
+                    <img src="images/testing.jpg" alt="Тестирование кода" onerror="this.src='images/project2.jpg'">
+                    <div class="gallery-overlay">
+                        <h3>Тестирование</h3>
+                        <p>JUnit + Mockito</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title"><span class="section-number">04.</span> Что дальше?</h2>
+            <div class="contact-content">
+                <h3>Свяжитесь со мной</h3>
+                <p>
+                    В настоящее время я открыт для новых возможностей. Если у вас есть проект,
+                    над которым вы хотели бы работать вместе, или просто хотите поздороваться —
+                    я постараюсь ответить вам как можно скорее!
+                </p>
+
+                <!-- Контакты -->
+                <div id="contactDetails" class="contact-details">
+                    <div class="contact-cards">
+                        <!-- Телефон -->
+                        <a href="tel:+79967092835" class="contact-card">
+                    <span class="contact-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </span>
+                            <span class="contact-label">Телефон</span>
+                            <span class="contact-value">+7 (996) 709-28-35</span>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:kruchkovdaniilidaniil61@gmail.com" class="contact-card">
+                    <span class="contact-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </span>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">kruchkovdaniilidaniil61@gmail.com</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com" target="_blank" class="contact-card">
+                    <span class="contact-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </span>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">@Bankahooks</span>
+                        </a>
+                    </div>
+
+                    <!-- Форма обратной связи -->
+                    <div class="contact-form">
+                        <h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--green)" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                            </svg>
+                            Напишите мне
+                        </h4>
+                        <form id="feedbackForm">
+                            <div class="form-group">
+                                <div class="input-with-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--slate)">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <input type="text" name="name" placeholder="Ваше имя" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-with-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--slate)">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                    <input type="email" name="email" placeholder="Ваш email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-with-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--slate)">
+                                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                                    </svg>
+                                    <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="cta-button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                                </svg>
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

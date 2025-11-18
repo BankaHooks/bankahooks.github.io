@@ -111,22 +111,19 @@ body {
     color: var(--green);
 }
 
-/* Main Content */
-.main-content {
-    margin-left: 100px;
-    padding: 0 150px;
-    width: calc(100% - 100px);
-    max-width: 1200px;
-}
+/@media (max-width: 768px) {
+     .main-content {
+         margin-left: 0;
+         margin-bottom: 60px; /* Для нижней панели */
+         padding: 0 1rem;
+         width: 100%;
+     }
 
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-}
+     .hero {
+         padding: 2rem 0;
+         min-height: auto;
+     }
+ }
 
 .hero-greeting {
     font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
@@ -181,11 +178,30 @@ section {
 }
 
 /* About Section */
-.about-content {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 3rem;
-    align-items: start;
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-image,
+    .project-content {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .project-reverse .project-content {
+        text-align: left;
+    }
 }
 
 .about-text p {
@@ -247,7 +263,7 @@ section {
 }
 
 .image-wrapper img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     filter: grayscale(100%) contrast(1);
@@ -346,7 +362,7 @@ section {
 }
 
 .project-image img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     filter: grayscale(100%) contrast(1);
@@ -573,21 +589,21 @@ section {
     }
 
     .contact-card {
-        padding: 1.5rem 1rem;
-        min-height: 140px;
-    }
-
-    .contact-form {
         padding: 1.5rem;
+        min-height: auto;
+        text-align: left;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
     }
 
-    .input-with-icon input,
-    .input-with-icon textarea {
-        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+    .contact-icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
     }
 
-    .input-with-icon svg {
-        left: 0.8rem;
+    .contact-label, .contact-value {
+        text-align: left;
     }
 }
 
@@ -654,11 +670,40 @@ section {
 }
 
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        padding: 0 1rem;
+        border-right: none;
+        border-top: 1px solid var(--lightest-navy);
+    }
+
+    .logo a {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .nav-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 0.7rem;
+    }
+
+    .social-links {
+        flex-direction: row;
         gap: 1rem;
-        padding: 0 2rem;
-        text-align: center;
     }
 }
 
@@ -781,8 +826,8 @@ section {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -834,5 +879,82 @@ section {
 
     .gallery-overlay h3 {
         font-size: 1.1rem;
+    }
+}
+/* Базовые стили для мобильных */
+body {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Медиа-запросы для разных экранов */
+@media (max-width: 768px) {
+    /* Стили для планшетов */
+    body { font-size: 14px; }
+    .container { padding: 10px; }
+}
+
+@media (max-width: 480px) {
+    /* Стили для телефонов */
+    body { font-size: 12px; }
+    .container { padding: 5px; }
+}
+
+.container {
+    max-width: 100%; /* Уберите ограничения */
+    padding: 20px;
+}
+
+main, section, article {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-name {
+        font-size: clamp(32px, 10vw, 48px);
+    }
+
+    .hero-title {
+        font-size: clamp(24px, 8vw, 36px);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* Исправление текста контактов - хуйня не работающая*/
+    .contact-value {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .input-with-icon input,
+    .input-with-icon textarea {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+    }
+
+    .input-with-icon svg {
+        left: 0.8rem;
+        width: 16px;
+        height: 16px;
     }
 }
