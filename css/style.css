@@ -32,6 +32,8 @@ body {
 .container {
     display: flex;
     min-height: 100vh;
+    max-width: 100%;
+    padding: 20px 150px;
 }
 
 /* Sidebar Navigation */
@@ -111,6 +113,23 @@ body {
     color: var(--green);
 }
 
+/* Main Content */
+.main-content {
+    margin-left: 100px;
+    padding: 0;
+    width: calc(100% - 100px);
+    max-width: 1200px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
 .hero-greeting {
     font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
     color: var(--green);
@@ -164,35 +183,15 @@ section {
 }
 
 /* About Section */
-    .about-content {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        gap: 3rem;
-        align-items: start; /* Важно! Выравнивание по верху */
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .project-image,
-    .project-content {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
-
-    .project-reverse .project-content {
-        text-align: left;
-    }
+.about-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: start;
 }
 
 .about-text {
-    text-align: left; /* Выравнивание текста по левому краю */
+    text-align: left;
 }
 
 .skills-list {
@@ -219,8 +218,8 @@ section {
 }
 
 .about-image {
-    max-width: 400px; /* Ограничить максимальную ширину */
-    margin: 0 auto;
+    max-width: 300px;
+    margin: 0;
     position: relative;
 }
 
@@ -252,7 +251,7 @@ section {
 }
 
 .image-wrapper img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     filter: grayscale(100%) contrast(1);
@@ -351,7 +350,7 @@ section {
 }
 
 .project-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     filter: grayscale(100%) contrast(1);
@@ -426,7 +425,7 @@ section {
 /* Contact Section */
 .contact-content {
     text-align: center;
-    max-width: 800px; /* Увеличим для формы */
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -443,7 +442,6 @@ section {
     margin-bottom: 3rem;
 }
 
-/* Контактные карточки - исправленное выравнивание */
 .contact-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -512,7 +510,6 @@ section {
     flex-shrink: 0;
 }
 
-/* Форма обратной связи */
 .contact-form {
     margin-top: 3rem;
     padding: 2rem;
@@ -570,69 +567,47 @@ section {
     border-color: var(--green);
 }
 
-/* Адаптивность для контактов */
-@media (max-width: 768px) {
-    .contact-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .contact-card {
-        padding: 1.5rem;
-        min-height: auto;
-        text-align: left;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .contact-icon {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-
-    .contact-label, .contact-value {
-        text-align: left;
-    }
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0.5rem;
 }
 
-
-/* Форма обратной связи */
-.contact-form {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--light-navy);
-    border-radius: 10px;
+.cta-button:hover {
+    background-color: var(--green-tint);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.3);
 }
 
-.contact-form h4 {
-    color: var(--lightest-slate);
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
+.contact-form .cta-button {
     width: 100%;
-    padding: 1rem;
-    background: var(--navy);
-    border: 1px solid var(--lightest-navy);
-    border-radius: 5px;
-    color: var(--light-slate);
-    font-family: inherit;
-    transition: border-color 0.3s ease;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--green);
+.cta-button svg {
+    transition: transform 0.3s ease;
+    color: currentColor;
 }
 
-/* Футер */
+.cta-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Footer */
 .footer {
     margin-top: 4rem;
     padding: 2rem 0;
@@ -656,135 +631,6 @@ section {
 .footer-social {
     display: flex;
     gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: auto;
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        padding: 0 1rem;
-        border-right: none;
-        border-top: 1px solid var(--lightest-navy);
-    }
-
-    .logo a {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: 1rem;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        gap: 1.5rem;
-    }
-
-    .nav-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: 0.7rem;
-    }
-
-    .social-links {
-        flex-direction: row;
-        gap: 1rem;
-    }
-}
-
-/* Стили для SVG иконок в контактах */
-.contact-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--green);
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover .contact-icon {
-    color: var(--lightest-slate);
-    transform: scale(1.1) rotate(5deg);
-}
-
-/* Стили для иконок в форме */
-.input-with-icon {
-    position: relative;
-}
-
-.input-with-icon svg {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-}
-
-.input-with-icon textarea + svg {
-    top: 1.5rem;
-    transform: none;
-}
-
-.input-with-icon input,
-.input-with-icon textarea {
-    padding-left: 3rem !important;
-}
-
-/* Иконка в кнопке отправки */
-.cta-button svg {
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover svg {
-    transform: translateX(3px);
-}
-
-/* Buttons */
-.cta-button {
-    display: inline-block;
-    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--green);
-    background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: 3px;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 0.5rem; /* Добавляем отступы между кнопками */
-}
-
-.cta-button:hover {
-    background-color: var(--green-tint);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.3);
-}
-
-/* Специфичные стили для кнопки в форме */
-.contact-form .cta-button {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-/* Стили для иконки в кнопке отправки */
-.cta-button svg {
-    transition: transform 0.3s ease;
-    color: currentColor;
-}
-
-.cta-button:hover svg {
-    transform: translateX(3px);
 }
 
 /* Gallery Section */
@@ -815,8 +661,8 @@ section {
 }
 
 .gallery-item img {
-    max-width: 100%;
-    height: auto%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -853,54 +699,55 @@ section {
     font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
 }
 
-/* Адаптивность галереи */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .container {
+        padding: 20px 1rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        padding: 0 1rem;
+        border-right: none;
+        border-top: 1px solid var(--lightest-navy);
+    }
+
+    .logo a {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .nav-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 0.7rem;
+    }
+
+    .social-links {
+        flex-direction: row;
         gap: 1rem;
     }
 
-    .gallery-overlay {
-        padding: 1.5rem 1rem 1rem;
-        transform: translateY(0);
-        background: rgba(10, 25, 47, 0.8);
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 60px;
+        padding: 0;
+        width: 100%;
     }
 
-    .gallery-overlay h3 {
-        font-size: 1.1rem;
-    }
-}
-/* Базовые стили для мобильных */
-body {
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-/* Медиа-запросы для разных экранов */
-@media (max-width: 768px) {
-    /* Стили для планшетов */
-    body { font-size: 14px; }
-    .container { padding: 10px; }
-}
-
-@media (max-width: 480px) {
-    /* Стили для телефонов */
-    body { font-size: 12px; }
-    .container { padding: 5px; }
-}
-
-.container {
-    max-width: 100%; /* Уберите ограничения */
-    padding: 20px;
-}
-
-main, section, article {
-    width: 95%;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
-@media (max-width: 768px) {
     section {
         padding: 50px 0;
     }
@@ -908,6 +755,11 @@ main, section, article {
     .section-title {
         font-size: 1.5rem;
         margin-bottom: 2rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+        min-height: auto;
     }
 
     .hero-name {
@@ -923,14 +775,58 @@ main, section, article {
         max-width: 100%;
     }
 
-    /* Исправление текста контактов - хуйня не работающая*/
-    .contact-value {
-        font-size: 0.9rem;
-        word-break: break-all;
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-}
 
-@media (max-width: 768px) {
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto;
+        order: -1;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-image,
+    .project-content {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .project-reverse .project-content {
+        text-align: left;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        min-height: auto;
+        text-align: left;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .contact-icon {
+        margin-bottom: 0;
+    }
+
+    .contact-label, .contact-value {
+        text-align: left;
+    }
+
     .contact-form {
         padding: 1rem;
         margin-top: 2rem;
@@ -945,5 +841,37 @@ main, section, article {
         left: 0.8rem;
         width: 16px;
         height: 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-overlay {
+        padding: 1.5rem 1rem 1rem;
+        transform: translateY(0);
+        background: rgba(10, 25, 47, 0.8);
+    }
+
+    .gallery-overlay h3 {
+        font-size: 1.1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
     }
 }
